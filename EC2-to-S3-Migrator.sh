@@ -21,7 +21,7 @@ region=us-east-2
 # Set the prefix to use for the exported instances in the S3 bucket (the container in the bucket)
 s3_prefix=vms/
 
-# Generate a unique name for the S3 bucket
+# Set the prefix to use for the exported instances in the S3 bucket
 bucket_name=
  
 # Create the export task configuration file
