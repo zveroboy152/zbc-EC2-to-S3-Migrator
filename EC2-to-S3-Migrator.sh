@@ -10,6 +10,7 @@ echo "                             \\\\ \_\_\_\_/"
 echo "                              \_________/"
 echo "                                   |"
 echo "                                ___|___"
+echo "   EC2 to S3 Migrator 
 echo " _____ _____ _____ _____ _____ _____ _____ _____ "
 
 # CLI based choice list to select between ALL AWS US regions
