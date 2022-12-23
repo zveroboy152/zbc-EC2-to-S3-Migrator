@@ -95,3 +95,4 @@ rm export_task_config.json
 # Print to the screen what happened
 echo "Exported the following instances to the $bucket_name S3 bucket in the $region region:"
 echo $instances
+echo "This export can take from 1 - 6 hours"
