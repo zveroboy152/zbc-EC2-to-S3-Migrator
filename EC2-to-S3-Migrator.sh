@@ -85,20 +85,7 @@ EOF
 instances=$(aws ec2 describe-instances --region $region --filters "Name=instance-state-name,Values=stopped" --query "Reservations[*].Instances[*].[InstanceId]" --output text)
 
 # Loop through the list of instances and export each one to the S3 bucket
-# Calculate the total number of instances
-num_instances=`echo $instances | wc -w`
-
-# Initialize a counter for the progress bar
-counter=1
-
 for instance in $instances; do
-  # Display the progress bar using pv
-  echo $counter | pv -l -s $num_instances | awk '{printf("%3d%%\n", $1)}'
-
-  # Increment the counter
-  counter=$((counter+1))
-
-  # Run the AWS command
   aws ec2 create-instance-export-task --instance-id $instance --target-environment vmware --export-to-s3-task file://export_task_config.json --region $region
 done
 
@@ -108,4 +95,3 @@ rm export_task_config.json
 # Print to the screen what happened
 echo "Exported the following instances to the $bucket_name S3 bucket in the $region region:"
 echo $instances
-
