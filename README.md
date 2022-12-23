@@ -1,9 +1,28 @@
-This script is a Bash script that exports stopped EC2 instances in the specified region to an S3 bucket in the OVA (Open Virtualization Appliance) format.
+# EC2 to S3 Migrator
 
-Before the script begins, it specifies the region to scan for instances, the prefix to use for the exported instances in the S3 bucket, and the name of the S3 bucket. It then creates a configuration file for the export task with the specified container and disk image formats, as well as the S3 bucket and prefix.
+A command-line utility for exporting stopped Amazon Elastic Compute Cloud (EC2) instances to an Amazon Simple Storage Service (S3) bucket.
 
-The script then retrieves a list of all stopped EC2 instances in the specified region using the AWS CLI command aws ec2 describe-instances. It then loops through the list of instances and exports each one to the S3 bucket using the aws ec2 create-instance-export-task command.
+## Steps
 
-Finally, the script removes the export task configuration file.
-
-Before running this script, you will need to grant read/write permission to the S3 bucket for the relevant AWS account using the "Access control list (ACL)" in the S3 bucket's permissions. You can find the relevant grantee by referencing the URL provided in the script comments.
+1. Select the region to scan for instances:
+   - us-east-1
+   - us-east-2
+   - us-west-1
+   - us-west-2
+   - ap-south-1
+   - ap-northeast-2
+   - ap-southeast-1
+   - ap-southeast-2
+   - ap-northeast-1
+   - ca-central-1
+   - eu-central-1
+   - eu-west-1
+   - eu-west-2
+   - eu-west-3
+   - eu-north-1
+   - sa-east-1
+2. Enter the name of the S3 bucket.
+3. Review the list of stopped EC2 instances in the selected region.
+4. Confirm whether you want to continue and export the listed instances to the S3 bucket.
+5. If confirmed, the script will create a configuration file for the export tasks and then loop through the list of instances, exporting each one to the S3 bucket using the `aws ec2 create-instance-export-task` command.
+6. Once the loop completes, the script will clean up the export task configuration file and print a list of the instances that were exported to the S3 bucket.
