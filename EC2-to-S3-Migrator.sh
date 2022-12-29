@@ -10,8 +10,7 @@ Prior to running this script, be sure you do the following in your AWS S3 bucket
 
 3. Find section named: Access for other AWS accounts, add relevant canonical account ID and permissions
 
-Documentation: https://docs.aws.amazon.com/vm-import/latest/userguide/vmexport.html
-"
+Documentation: https://docs.aws.amazon.com/vm-import/latest/userguide/vmexport.html"
 echo " _____ _____ _____ _____ _____ _____ _____ _____ "
 
 # CLI based choice list to select between ALL AWS US regions
