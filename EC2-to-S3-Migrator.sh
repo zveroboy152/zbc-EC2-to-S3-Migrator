@@ -1,15 +1,6 @@
 #!/bin/bash
 
-# ASCII title screen
-echo "                              /^\/^\\"
-echo "                             {/ o o \\}"
-echo "                             +\~+\~+\~+"
-echo "                             | Zveroboy |"
-echo "                             |   Cloud  |"
-echo "                             \\\\ \_\_\_\_/"
-echo "                              \_________/"
-echo "                                   |"
-echo "                                ___|___"
+echo " _____ _____ _____ _____ _____ _____ _____ _____ "
 echo "   EC2 to S3 Migrator "
 echo " _____ _____ _____ _____ _____ _____ _____ _____ "
 
@@ -54,7 +45,7 @@ case $region_num in
 esac
 
 # Set the prefix to use for the exported instances in the S3 bucket (the container in the bucket)
-s3_prefix=vms/
+s3_prefix=vm/
 
 # Set the prefix to use for the exported instances in the S3 bucket
 read -p "Enter the name of the S3 bucket: " bucket_name
