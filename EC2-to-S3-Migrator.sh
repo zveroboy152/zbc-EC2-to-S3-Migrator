@@ -50,7 +50,7 @@ case $region_num in
 esac
 
 # Set the prefix to use for the exported instances in the S3 bucket (the container in the bucket)
-s3_prefix=vm/
+s3_prefix=/
 
 # Set the prefix to use for the exported instances in the S3 bucket
 read -p "Enter the name of the S3 bucket: " bucket_name
