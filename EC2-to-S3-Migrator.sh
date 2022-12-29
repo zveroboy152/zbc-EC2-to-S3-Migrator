@@ -2,6 +2,16 @@
 
 echo " _____ _____ _____ _____ _____ _____ _____ _____ "
 echo "   EC2 to S3 Migrator "
+echo"
+Prior to running this script, be sure you do the following in your AWS S3 bucket:
+1. Add Grantee, Region-specific canonical account ID to S3 ACL with read/write permission
+
+2. Navigate to: Amazon S3 -> Buckets -> yourbucketname -> permissions -> Access control list (ACL) -> Edit
+
+3. Find section named: Access for other AWS accounts, add relevant canonical account ID and permissions
+
+Documentation: https://docs.aws.amazon.com/vm-import/latest/userguide/vmexport.html
+"
 echo " _____ _____ _____ _____ _____ _____ _____ _____ "
 
 # CLI based choice list to select between ALL AWS US regions
