@@ -2,6 +2,14 @@
 
 A command-line utility for exporting stopped Amazon Elastic Compute Cloud (EC2) instances to an Amazon Simple Storage Service (S3) bucket.
 
+## Pre-reqs:
+
+Prior to running this script, be sure you do the following in your AWS S3 bucket:
+1. Add Grantee, Region-specific canonical account ID to S3 ACL with read/write permission
+2. Navigate to: Amazon S3 -> Buckets -> yourbucketname -> permissions -> Access control list (ACL) -> Edit
+3. Find section named: Access for other AWS accounts, add relevant canonical account ID and permissions
+Documentation: https://docs.aws.amazon.com/vm-import/latest/userguide/vmexport.html"
+
 ## Steps
 
 1. Select the region to scan for instances:
